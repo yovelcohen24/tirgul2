@@ -1,5 +1,15 @@
 import java.util.ArrayList;
 
+
+/** class description of shared
+ * data: getters and setters
+ * for the ShareData class. On
+ * this class we will get the
+ * result of our threads for
+ * the array
+ * @author yovel cohen
+ *
+ */
 public class SharedData 
 {
 	private ArrayList<Integer> array;
