@@ -1,16 +1,37 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestThreadCheckArray {
+	/**
+	 * @param args
+	 *  This method initializes an integer array with 
+	 *  the wanted size and elements of user. 
+	 *  The method searches for group that her sum
+	 *  elements is equal to the sum that entered 
+	 * (group from the array)
+	 *  by the user - check if there is such group
+	 */
+	
+	/**
+	 * @param array and a number
+	 * This class contains getters 
+	 * and setters for the variable used
+	 */
+	/**
+	 * @param sharedData
+	 * Sets and gets necessary flags,
+	 * also runs the threads to find the wanted sum
+	 */
 	public static void main(String[] args) {
 		try (Scanner input = new Scanner(System.in)) {
 			Thread thread1, thread2;
 			System.out.println("Enter array size");
 			int num  = input.nextInt();
-			int [] array = new int[num];
+			ArrayList<Integer> array = new ArrayList<Integer>();
 			System.out.println("Enter numbers for array");
 			
 			for (int index = 0; index < num; index++) 
-				array[index] = input.nextInt();
+				array.add(index,input.nextInt());
 			
 			System.out.println("Enter number");
 			num = input.nextInt();
@@ -35,9 +56,9 @@ public class TestThreadCheckArray {
 				System.out.println("Sorry");
 				return;
 			}
-			System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().length);
+			System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().size());
 			System.out.print("I:    ");
-			for(int index = 0; index < sd.getArray().length ; index++)
+			for(int index = 0; index < sd.getArray().size() ; index++)
 				System.out.print(index + "    ");
 			System.out.println();
 			System.out.print("A:    ");
@@ -47,7 +68,7 @@ public class TestThreadCheckArray {
 				int counter = 5;
 				while (true)
 				{
-					index = index / 10;
+					index /= 10;
 					counter--;
 					if (index == 0)
 						break;
